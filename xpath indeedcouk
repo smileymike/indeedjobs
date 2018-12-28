@@ -1,0 +1,236 @@
+In [270]: response.xpath("//a[@data-tn-element='jobTitle']/text()")
+Out[270]: 
+[<Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Private Tutor'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Sortation Operative (Part-Time) - Amazon'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Museum Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Customer Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Customer Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Postman/woman with Driving - Stroud Deli'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Christmas Customer Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Cleaner / 7102 - The Lord High Constable'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Customer Advisor'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Museum Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Team Member'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Sales Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Nike Part Time Athlete (Sales Associate)'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Store Assistant'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/text()" data='Barista'>]
+
+In [280]: response.xpath("//a[@data-tn-element='jobTitle']/@href")
+Out[280]: 
+[<Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/pagead/clk?mo=r&ad=-6NYlbfkN0AH52wRSgRJ'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/pagead/clk?mo=r&ad=-6NYlbfkN0Ai1kardP9A'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/pagead/clk?mo=r&ad=-6NYlbfkN0DFWYEVVHOf'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=51f82c4418f324c0&fccid=d0e9d5'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=ecdcb79862beb58f&fccid=72a97b'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=283dd8a7f27ca6ab&fccid=f987e1'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=a67125004f99b857&fccid=72a97b'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=a5b336e52e5c92de&fccid=ba4da6'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=049eeb97c4b7d237&fccid=bb1eaa'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=5b99014010303938&fccid=88d271'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=71f8920c250f2371&fccid=e0d9b6'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/company/Martin-McColl/jobs/Sales-Assist'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/rc/clk?jk=c89be7ba3711b3d1&fccid=2c62e4'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/pagead/clk?mo=r&ad=-6NYlbfkN0DnVRAL8x5j'>,
+ <Selector xpath="//a[@data-tn-element='jobTitle']/@href" data='/pagead/clk?mo=r&ad=-6NYlbfkN0AJjtF8FKdf'>]
+
+In [296]: response.xpath("//*[@class='company']").extract()
+Out[296]: 
+
+Two Ways to get it:
+First way (Don't have link)
+In [294]: response.xpath("//*[@class='company']/text()").extract()
+Out[294]: 
+['\n        Tutora Ltd',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        ',
+ '\n        McColls Retail Group',
+ '\n        ',
+ '\n        ',
+ '\n        ']
+Second Way (Have Link)
+In [300]: response.xpath("//*[@class='company']/a/text()").extract()
+Out[300]: 
+['\n        PMP for Amazon',
+ '\n        Canal & River Trust',
+ '\n        Tesco',
+ '\n        Boots',
+ '\n        Royal Mail Group',
+ '\n        Boots',
+ '\n        J D Wetherspoon plc',
+ '\n        Dreams',
+ '\n        Canal & River Trust',
+ '\n        Greggs',
+ '\n        NIKE INC',
+ '\n        Aldi',
+ '\n        Caffè Nero']
+
+In [301]: response.xpath("//*[@class='company']/a/@href").extract()
+Out[301]: 
+['/cmp/Amazon.com',
+ '/cmp/Canal-&-River-Trust',
+ '/cmp/Tesco',
+ '/cmp/Boots-Uk',
+ '/cmp/Royal-Mail',
+ '/cmp/Boots-Uk',
+ '/cmp/J-D-Wetherspoon-PLC',
+ '/cmp/Dreams-Ltd',
+ '/cmp/Canal-&-River-Trust',
+ '/cmp/Greggs',
+ '/cmp/Nike',
+ '/cmp/Aldi',
+ '/cmp/Caff%C3%A8-Nero-1']
+
+In [286]: response.xpath("//*[@class='location']").extract()
+Out[286]: 
+['<div class="location">United Kingdom</div>',
+ '<div class="location">Worcester</div>',
+ '<div class="location">Gloucestershire</div>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Quedgeley</span>',
+ '<span class="location">Stroud GL6</span>',
+ '<span class="location">Gloucester</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucestershire</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Tuffley</span>',
+ '<span class="location">Gloucester</span>',
+ '<div class="location">Swindon</div>',
+ '<div class="location">Gloucester GL1</div>']
+
+In [133]: response.xpath("//*[@class='salary no-wrap']").extract()
+Out[133]: 
+['<span class="salary no-wrap">\n                £20 - £40 an hour</span>',
+ '<span class="salary no-wrap">\n                £9.50 - £14.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £17,721 a year</span>',
+ '<span class="salary no-wrap">\n                £9.26 an hour</span>',
+ '<span class="salary no-wrap">\n                £17,721 a year</span>',
+ '<span class="salary no-wrap">\n                £8.85 an hour</span>',
+ '<span class="salary no-wrap">\n                £7.38 - £7.83 an hour</span>']
+
+In [142]: response.xpath("//*[@class='summary']/text()").extract()
+Out[142]: 
+['\n                            No formal teaching qualification necessary, but you must have strong subject knowledge. We are looking for private tutors to deliver hour-long tutoring sessions...',
+ "\n                            Working as a Sortation Associate, you'll be receiving, sorting, packing, and dispatching Amazon parcels, working to the high standards that ensure we are...",
+ '\n                            This involves taking bookings for ticketed events including boat trips, dealing with sales and general enquiries and redirecting business and other calls....',
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ '\n            Make our customers feel really good - it’s more than just answering their questions, it’s about giving our customers a really great experience....',
+ '\n            A full UK manual driving licence (in your current UK address), with no more than six penalty points is essential, but a clean licence is preferred....',
+ '\n            Whether it’s using the in store Ipad to support with checking availability of products, placing orders on their behalf, or processing the order when it is...',
+ '\n            As well as being able to handle a variety of manual tasks, you should be well presented, conversational English is essential, and work as a reliable team player...',
+ '\n            Imagine bringing together your passion for customers, the determination to succeed through recommending and selling our outstanding product range....',
+ '\n            This involves taking bookings for ticketed events including boat trips, dealing with sales and general enquiries and redirecting business and other calls....',
+ '\n            Deliver relevant added-value to customers to increase sales. Greggs Team Members are the face and voice of our organisation, engaging with our customers and...',
+ '\n            It is also about talking to customers promoting various products through active selling. A key part of your role will be to ensure that our customers receive...',
+ '\n            Utilize customer service skills, basic sales techniques, and product knowledge to connect customers with the right product and drive sales....',
+ "\n                            You'll do everything from checking off deliveries to dealing with enquiries or ensuring that the shelves are fully stocked with well-presented products....",
+ '\n                            In return, we will give you full training by our dedicated in store Maestros or our training team on everything from how to make an Espresso through to a decaf...']
+
+
+In [169]: job.xpath('//h2[@id="jl_51f82c4418f324c0"][@class="jobtitle"]/a/text()').extract()
+Out[169]: 
+['Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant',
+ 'Customer Assistant']
+
+In [171]: job.xpath('//h2[@id="jl_51f82c4418f324c0"][@class="jobtitle"]/a/@href').extract_first()
+Out[171]: '/rc/clk?jk=51f82c4418f324c0&fccid=d0e9d5166a3ee29e&vjs=3'
+
+In [197]: response.xpath('//div[@data-jk="51f82c4418f324c0"]/div[@ class="companyInfoWrapper"]/div/span/a/@href').extract()
+Out[197]: 
+['/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco',
+ '/cmp/Tesco']
+
+In [208]: job.xpath('//div[@data-jk="51f82c4418f324c0"]/div/span[@ class="location"]').extract()
+Out[208]: 
+['<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>',
+ '<span class="location">Gloucester GL1</span>']
+
+In [229]: job.xpath('//div[@data-jk="51f82c4418f324c0"]/table/tr/td/div/span[@class="summary"]/text()').extract()
+Out[229]: 
+["\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them....",
+ "\n            Customers want great products at great value which they can buy easily and it's our job to deliver this in the right way for them...."]
+
+In [256]: job.xpath('//div[@data-jk="7168728f5a0edf7c"]/table/tr/td/div/span[@class="salary no-wrap"]').extract()
+Out[256]: 
+['<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>',
+ '<span class="salary no-wrap">\n                £10.26 - £11.25 an hour</span>']
+
+In [267]: job.xpath('//div[@data-jk="7168728f5a0edf7c"]/table/tr/td/div/span[@class="summary"]/text()').extract()
+Out[267]: 
+['\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....',
+ '\n            Part Time Warehouse Operative Early Morning (UK). Attention to detail whilst working in a fast paced, pressurized environment....']
+
+
+/html/body/table[2]/tbody/tr/td/table/tbody/tr/td[2]/div[5]/table/tbody/tr/td/div[1]/span
+
+/html/body/table[2]/tbody/tr/td/table/tbody/tr/td[2]/div[5]/table/tbody/tr/td/div[2]/span
+
+/html/body/table[2]/tbody/tr/td/table/tbody/tr/td[2]/div[5]/table/tbody/tr/td/div[1]/span
+
+
+
+
+
+
+
+
+
+
+

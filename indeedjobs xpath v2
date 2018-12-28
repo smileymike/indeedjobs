@@ -1,0 +1,39 @@
+Sponsored Jobs
+In [10]: response.xpath('//div[@data-jk]/a')
+Out[10]: 
+[<Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja1" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja2" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja3" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja4" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja5" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja6" data-tn-ele'>,
+ <Selector xpath='//div[@data-jk]/a' data='<a target="_blank" id="sja7" data-tn-ele'>]
+
+Normal Jobs
+In [11]: response.xpath('//div[@data-jk]/*/a')
+Out[11]: 
+[<Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=51f82c4418f324c0&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=c89be7ba3711b3d1&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=6de5845d4032afd1&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=26e312df586b1703&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=008d5b44b346eb90&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=7168728f5a0edf7c&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/company/Acorn-Powell-Limited/j'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=049eeb97c4b7d237&amp'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/company/Yip-Shing/jobs/Warehou'>,
+ <Selector xpath='//div[@data-jk]/*/a' data='<a href="/rc/clk?jk=f966b168d4ae3658&amp'>]
+
+Normal Jobs
+In [12]: response.xpath('//div[@data-jk]/h2/a')
+Out[12]: 
+[<Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=51f82c4418f324c0&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=c89be7ba3711b3d1&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=6de5845d4032afd1&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=26e312df586b1703&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=008d5b44b346eb90&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=7168728f5a0edf7c&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/company/Acorn-Powell-Limited/j'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=049eeb97c4b7d237&amp'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/company/Yip-Shing/jobs/Warehou'>,
+ <Selector xpath='//div[@data-jk]/h2/a' data='<a href="/rc/clk?jk=f966b168d4ae3658&amp'>]
+
